@@ -125,6 +125,8 @@
               golines
               gofumpt
               goimports-reviser
+
+              stylua
             ];
           };
 
@@ -193,12 +195,7 @@
 
           # shared libraries to be added to LD_LIBRARY_PATH
           # variable available to nvim runtime
-          sharedLibraries = {
-            general = with pkgs;
-              [
-                # libgit2
-              ];
-          };
+          sharedLibraries = { general = with pkgs; [ libgit2 ]; };
 
           # environmentVariables:
           # this section is for environmentVariables that should be available
@@ -257,7 +254,7 @@
             lspDebugMode = false;
             # you could also pass something else:
             themer = true;
-            colorscheme = "catppuccin";
+            colorscheme = "catppuccin-mocha";
             theBestCat = "says meow!!";
             theWorstCat = {
               thing'1 = [ "MEOW" "HISSS" ];
