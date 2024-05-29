@@ -170,6 +170,7 @@
                 indent-blankline-nvim
                 none-ls-nvim
                 lsp-format-nvim
+                vim-tmux-navigator
               ];
             };
             # You can retrieve information from the
