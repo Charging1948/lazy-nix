@@ -1,0 +1,1 @@
+require('protean.keybinds.default')
