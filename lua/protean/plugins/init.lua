@@ -13,8 +13,6 @@ return {
   {
     "tpope/vim-sleuth",
   },
-
-
   -- NOTE: This is where your plugins related to LSP can be installed.
   --  The configuration is done below. Search for lspconfig to find it below.
   {
@@ -55,6 +53,14 @@ return {
       {
         "folke/neoconf.nvim",
       },
+      {
+        "SmiteshP/nvim-navbuddy",
+        dependencies = {
+          "SmiteshP/nvim-navic",
+          "MunifTanjim/nui.nvim"
+        },
+        opts = { lsp = { auto_attach = true } }
+      }
     },
   },
 

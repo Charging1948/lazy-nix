@@ -33,14 +33,17 @@
       url = "github:nvim-neotest/nvim-nio";
       flake = false;
     };
+    plugins-img-clip = {
+      url = "github:HakonHarnes/img-clip.nvim";
+      flake = false;
+    };
+    plugins-gx = {
+      url = "github:chrishrb/gx.nvim";
+      flake = false;
+    };
     neovim-nightly-overlay = {
       url = "github:nix-community/neovim-nightly-overlay";
     };
-    # neovim-flake = {
-    #   url = "github:neovim/neovim/nightly?dir=contrib";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    #   inputs.flake-utils.follows = "flake-utils";
-    # };
   };
 
   # see :help nixCats.flake.outputs
@@ -114,11 +117,13 @@
               universal-ctags
               ripgrep
               fd
+              fzf
               gcc
               nix-doc
               nil
               lua-language-server
               nixd
+              stylua
 
               gopls
               golint
@@ -126,7 +131,10 @@
               gofumpt
               goimports-reviser
 
-              stylua
+              vscode-langservers-extracted # HTML/CSS/JSON/ESLint
+              nodePackages.typescript-language-server
+              nodePackages.svelte-language-server
+              nodePackages.vls # Vue
             ];
           };
 
@@ -140,6 +148,8 @@
               nvim-dap-virtual-text
               nvim-dap-python
               nvim-dap-go
+              telescope-dap-nvim
+              neotest
             ];
             general = {
               gitPlugins = with pkgs.neovimPlugins; [ hlargs ];
@@ -151,10 +161,19 @@
                 luasnip
                 cmp_luasnip
                 cmp-path
+                cmp-buffer
                 cmp-nvim-lsp
-                telescope-fzf-native-nvim
+                cmp-nvim-lsp-signature-help
+                cmp-calc
+                cmp-emoji
+                cmp-spell
+                cmp-treesitter
+                cmp-latex-symbols
+                cmp-pandoc-references
+                copilot-lua
+                nvim-autopairs
+                lspkind-nvim
                 plenary-nvim
-                telescope-nvim
                 nvim-treesitter-textobjects
                 nvim-treesitter.withAllGrammars
                 nvim-lspconfig
@@ -163,6 +182,12 @@
                 gitsigns-nvim
                 which-key-nvim
                 comment-nvim
+                conform-nvim
+                neogen
+                flash-nvim
+                nvim-spectre
+                nvim-surround
+                tabular
                 vim-sleuth
                 vim-fugitive
                 vim-rhubarb
@@ -171,8 +196,35 @@
                 none-ls-nvim
                 lsp-format-nvim
                 vim-tmux-navigator
+                zen-mode-nvim
+                
+                pkgs.neovimPlugins.gx
+                pkgs.neovimPlugins.img-clip
+
+
+                # TODO: Add stuff for completion.lua inside plugins
+                # TODO: Also use plugins in lua config, especially telescope ones
+
+                nvim-colorizer-lua
+              ];
+              telescopePlugins = with pkgs.vimPlugins; [
+                telescope-nvim
+                telescope-manix
+                telescope-fzf-native-nvim
+                telescope-ui-select-nvim
+                telescope-undo-nvim
+                telescope-cheat-nvim
+                neorg-telescope
+                telescope-zoxide
               ];
             };
+            scientific = with pkgs.vimPlugins; [
+              quarto-nvim
+              otter-nvim
+              molten-nvim
+              vim-slime
+              pkgs.neovimPlugins.img-clip
+            ];
             # You can retrieve information from the
             # packageDefinitions of the package this was packaged with.
             # :help nixCats.flake.outputs.categoryDefinitions.scheme
@@ -183,6 +235,10 @@
                 "catppuccin-mocha" = catppuccin-nvim;
                 "catppuccin" = catppuccin-nvim;
                 "tokyonight" = tokyonight-nvim;
+                "kanagawa" = kanagawa-nvim;
+                "kanagawa-wave" = kanagawa-nvim;
+                "kanagawa-dragon" = kanagawa-nvim;
+                "kanagawa-lotus" = kanagawa-nvim;
               });
           };
 
@@ -218,7 +274,17 @@
           # lists of the functions you would have passed to
           # python.withPackages or lua.withPackages
           extraPythonPackages = { test = _: [ ]; };
-          extraPython3Packages = { test = _: [ ]; };
+          extraPython3Packages = { 
+            scientific = ps: with ps;[ 
+              pynvim
+              jupyter-client
+              ipykernel
+              cairosvg
+              ipython
+              nbformat
+              jupytext
+            ]; 
+          };
           extraLuaPackages = { test = [ (_: [ ]) ]; };
         };
 
@@ -250,12 +316,14 @@
             lazy = true;
             generalBuildInputs = true;
             general = true;
+            scientific = true;
             # this does not have an associated category of plugins,
             # but lua can still check for it
             lspDebugMode = false;
             # you could also pass something else:
             themer = true;
-            colorscheme = "catppuccin-mocha";
+            # colorscheme = "catppuccin-mocha";
+            colorscheme = "kanagawa";
             theBestCat = "says meow!!";
             theWorstCat = {
               thing'1 = [ "MEOW" "HISSS" ];

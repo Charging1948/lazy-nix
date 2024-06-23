@@ -259,6 +259,22 @@
         "type": "github"
       }
     },
+    "plugins-gx": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1715192744,
+        "narHash": "sha256-UXKFqnBI87C2RRvkcrol1Kjm26XpW1sD+By5PEJojbc=",
+        "owner": "chrishrb",
+        "repo": "gx.nvim",
+        "rev": "cf6ed6ba86ffe4e3f51a898c03a05023b7a2fe48",
+        "type": "github"
+      },
+      "original": {
+        "owner": "chrishrb",
+        "repo": "gx.nvim",
+        "type": "github"
+      }
+    },
     "plugins-hlargs": {
       "flake": false,
       "locked": {
@@ -288,6 +304,22 @@
       "original": {
         "owner": "m-demare",
         "repo": "hlargs.nvim",
+        "type": "github"
+      }
+    },
+    "plugins-img-clip": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1717612998,
+        "narHash": "sha256-z8gqQWbM0jFXSsv7I5eB2Yo1Lq2UsIcSm3AhxZbZi2A=",
+        "owner": "HakonHarnes",
+        "repo": "img-clip.nvim",
+        "rev": "1924e20ab19afec9779109d083b6e5f8bee8fb17",
+        "type": "github"
+      },
+      "original": {
+        "owner": "HakonHarnes",
+        "repo": "img-clip.nvim",
         "type": "github"
       }
     },
@@ -329,7 +361,9 @@
         "neovim-nightly-overlay": "neovim-nightly-overlay",
         "nix-cats": "nix-cats",
         "nixpkgs": "nixpkgs_2",
+        "plugins-gx": "plugins-gx",
         "plugins-hlargs": "plugins-hlargs_2",
+        "plugins-img-clip": "plugins-img-clip",
         "plugins-nvim-nio": "plugins-nvim-nio_2"
       }
     },
