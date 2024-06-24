@@ -30,9 +30,9 @@ return {
       transparent = false, -- do not set background color
       dimInactive = false, -- dim inactive window `:h hl-NormalNC`
       terminalColors = true, -- define vim.g.terminal_color_{0,17}
-      theme = "dragon", -- Load "wave" theme when 'background' option is not set
+      theme = "wave", -- Load "wave" theme when 'background' option is not set
       background = { -- map the value of 'background' option to a theme
-        dark = "dragon", -- try "dragon" !
+        dark = "wave", -- try "dragon" !
         light = "lotus",
       },
     },
@@ -59,7 +59,7 @@ return {
         css = false, -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
         css_fn = false, -- Enable all CSS *functions*: rgb_fn, hsl_fn
         -- Available modes for `mode`: foreground, background,  virtualtext
-        mode = "virtualtext", -- Set the display mode.
+        mode = "background", -- Set the display mode.
         -- Available methods are false / true / "normal" / "lsp" / "both"
         -- True is same as normal
         tailwind = true, -- Enable tailwind colors
