@@ -40,6 +40,7 @@ return {
           lua = { "stylua" },
           python = { "isort", "black" },
           typst = { "typstfmt" },
+          bib = { "bibtex-tidy" },
         },
         -- formatters = {
         --   mystylua = {
@@ -59,6 +60,7 @@ return {
           -- because some formatters care about the filename.
           lang_to_ext = {
             bash = "sh",
+            bib = "bib",
             c_sharp = "cs",
             elixir = "exs",
             javascript = "js",
@@ -66,11 +68,11 @@ return {
             latex = "tex",
             markdown = "md",
             python = "py",
+            r = "r",
             ruby = "rb",
             rust = "rs",
             teal = "tl",
             typst = "typ",
-            r = "r",
             typescript = "ts",
           },
           -- Map of treesitter language to formatters to use

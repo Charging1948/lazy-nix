@@ -147,6 +147,8 @@
 
               mdformat
               marksman
+
+              bibtex-tidy
             ];
           };
 
