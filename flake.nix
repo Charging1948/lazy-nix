@@ -119,10 +119,12 @@
               fd
               fzf
               gcc
+
               nix-doc
               nil
-              lua-language-server
               nixd
+
+              lua-language-server
               stylua
 
               gopls
@@ -135,6 +137,16 @@
               nodePackages.typescript-language-server
               nodePackages.svelte-language-server
               nodePackages.vls # Vue
+
+              pyright
+              isort
+              black
+
+              typstfmt
+              typst-lsp
+
+              mdformat
+              marksman
             ];
           };
 
