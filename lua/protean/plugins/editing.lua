@@ -40,7 +40,6 @@ return {
           lua = { "stylua" },
           python = { "isort", "black" },
           typst = { "typstfmt" },
-          quarto = { "mdformat" },
         },
         -- formatters = {
         --   mystylua = {
@@ -67,7 +66,6 @@ return {
             latex = "tex",
             markdown = "md",
             python = "py",
-            quarto = "qmd",
             ruby = "rb",
             rust = "rs",
             teal = "tl",
