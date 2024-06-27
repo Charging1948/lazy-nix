@@ -149,6 +149,8 @@
               marksman
 
               bibtex-tidy
+
+              zoxide
             ];
           };
 
@@ -198,7 +200,8 @@
                 comment-nvim
                 conform-nvim
                 neogen
-                flash-nvim
+                # flash-nvim
+                hop-nvim
                 nvim-spectre
                 nvim-surround
                 tabular
@@ -211,10 +214,12 @@
                 lsp-format-nvim
                 vim-tmux-navigator
                 zen-mode-nvim
-                
+
                 pkgs.neovimPlugins.gx
                 pkgs.neovimPlugins.img-clip
 
+                nvim-navic
+                nvim-navbuddy
 
                 # TODO: Add stuff for completion.lua inside plugins
                 # TODO: Also use plugins in lua config, especially telescope ones
@@ -288,16 +293,17 @@
           # lists of the functions you would have passed to
           # python.withPackages or lua.withPackages
           extraPythonPackages = { test = _: [ ]; };
-          extraPython3Packages = { 
-            scientific = ps: with ps;[ 
-              pynvim
-              jupyter-client
-              ipykernel
-              cairosvg
-              ipython
-              nbformat
-              jupytext
-            ]; 
+          extraPython3Packages = {
+            scientific = ps:
+              with ps; [
+                pynvim
+                jupyter-client
+                ipykernel
+                cairosvg
+                ipython
+                nbformat
+                jupytext
+              ];
           };
           extraLuaPackages = { test = [ (_: [ ]) ]; };
         };
