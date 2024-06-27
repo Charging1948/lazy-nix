@@ -25,6 +25,27 @@ return {
           return vim.fn.executable("make") == 1
         end),
       },
+      "mrcjkb/telescope-manix",
+      {
+        "nvim-telescope/telescope-dap.nvim",
+        dependencies = {
+          "mfussenegger/nvim-dap",
+        },
+      },
+      "nvim-telescope/telescope-ui-select.nvim",
+      "debugloop/telescope-undo.nvim",
+      {
+        "nvim-telescope/telescope-cheat.nvim",
+        dependencies = {
+          "kkharji/sqlite.lua",
+        },
+      },
+      {
+        "jvgrootveld/telescope-zoxide",
+        dependencies = {
+          "nvim-lua/popup.nvim",
+        },
+      },
     },
   },
 }
