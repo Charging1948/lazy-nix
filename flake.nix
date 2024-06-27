@@ -123,6 +123,7 @@
               nix-doc
               nil
               nixd
+              alejandra
 
               lua-language-server
               stylua
@@ -242,7 +243,6 @@
               otter-nvim
               molten-nvim
               vim-slime
-              pkgs.neovimPlugins.img-clip
             ];
             # You can retrieve information from the
             # packageDefinitions of the package this was packaged with.
