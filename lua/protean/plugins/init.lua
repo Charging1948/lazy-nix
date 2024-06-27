@@ -57,10 +57,10 @@ return {
         "SmiteshP/nvim-navbuddy",
         dependencies = {
           "SmiteshP/nvim-navic",
-          "MunifTanjim/nui.nvim"
+          "MunifTanjim/nui.nvim",
         },
-        opts = { lsp = { auto_attach = true } }
-      }
+        opts = { lsp = { auto_attach = true } },
+      },
     },
   },
 
@@ -179,22 +179,22 @@ return {
     },
   },
 
-  {
-    -- Theme inspired by Atom (disabled)
-    "navarasu/onedark.nvim",
-    priority = 1000,
-    config = function()
-      vim.cmd.colorscheme("onedark")
-    end,
-  },
-  {
-    "catppuccin/nvim",
-    name = "catppuccin",
-    config = function()
-      vim.cmd.colorscheme("catppuccin")
-    end,
-    priority = 1000,
-  },
+  -- {
+  --   -- Theme inspired by Atom (disabled)
+  --   "navarasu/onedark.nvim",
+  --   priority = 1000,
+  --   config = function()
+  --     vim.cmd.colorscheme("onedark")
+  --   end,
+  -- },
+  -- {
+  --   "catppuccin/nvim",
+  --   name = "catppuccin",
+  --   config = function()
+  --     vim.cmd.colorscheme("catppuccin")
+  --   end,
+  --   priority = 1000,
+  -- },
 
   {
     -- Add indentation guides even on blank lines
