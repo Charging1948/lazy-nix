@@ -47,5 +47,15 @@ return {
         },
       },
     },
+    config = function()
+      local t = require("telescope")
+      t.load_extension("cheat")
+      t.load_extension("zoxide")
+      t.load_extension("undo")
+      t.load_extension("ui-select")
+      t.load_extension("dap")
+      t.load_extension("manix")
+      t.load_extension("fzf")
+    end,
   },
 }
