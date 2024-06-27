@@ -23,7 +23,6 @@
     nix-cats = {
       url = "github:BirdeeHub/nixCats-nvim";
       inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-utils.follows = "flake-utils";
     };
     plugins-hlargs = {
       url = "github:m-demare/hlargs.nvim";
