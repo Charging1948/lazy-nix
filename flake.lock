@@ -319,6 +319,22 @@
         "type": "github"
       }
     },
+    "plugins-luarocks-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1716914177,
+        "narHash": "sha256-siqpyQLpxWYfZKxoPrflnCg8V5oTQcIXKrezjCgZfMM=",
+        "owner": "vhyrro",
+        "repo": "luarocks.nvim",
+        "rev": "1db9093915eb16ba2473cfb8d343ace5ee04130a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "vhyrro",
+        "repo": "luarocks.nvim",
+        "type": "github"
+      }
+    },
     "plugins-nvim-nio": {
       "flake": false,
       "locked": {
@@ -344,6 +360,7 @@
         "plugins-gx": "plugins-gx",
         "plugins-hlargs": "plugins-hlargs_2",
         "plugins-img-clip": "plugins-img-clip",
+        "plugins-luarocks-nvim": "plugins-luarocks-nvim",
         "plugins-nvim-nio": "plugins-nvim-nio"
       }
     },

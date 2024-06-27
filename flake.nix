@@ -40,6 +40,10 @@
       url = "github:chrishrb/gx.nvim";
       flake = false;
     };
+    plugins-luarocks-nvim = {
+      url = "github:vhyrro/luarocks.nvim";
+      flake = false;
+    };
     neovim-nightly-overlay = {
       url = "github:nix-community/neovim-nightly-overlay";
     };
@@ -243,6 +247,10 @@
               molten-nvim
               vim-slime
             ];
+            notes = with pkgs.vimPlugins; [
+              pkgs.neovimPlugins.luarocks-nvim
+              neorg
+            ];
             # You can retrieve information from the
             # packageDefinitions of the package this was packaged with.
             # :help nixCats.flake.outputs.categoryDefinitions.scheme
@@ -293,18 +301,22 @@
           # python.withPackages or lua.withPackages
           extraPythonPackages = { test = _: [ ]; };
           extraPython3Packages = {
-            scientific = ps:
-              with ps; [
-                pynvim
-                jupyter-client
-                ipykernel
-                cairosvg
-                ipython
-                nbformat
-                jupytext
-              ];
+            scientific = ps: with ps; [
+              pynvim
+              jupyter-client
+              ipykernel
+              cairosvg
+              ipython
+              nbformat
+              jupytext
+            ];
           };
-          extraLuaPackages = { test = [ (_: [ ]) ]; };
+          extraLuaPackages = { 
+            notes = ps: with ps;[ 
+              lua-utils-nvim
+              pathlib-nvim
+            ];
+          };
         };
 
       # packageDefinitions:
@@ -336,13 +348,14 @@
             generalBuildInputs = true;
             general = true;
             scientific = true;
+            notes = true;
             # this does not have an associated category of plugins,
             # but lua can still check for it
             lspDebugMode = false;
             # you could also pass something else:
             themer = true;
             # colorscheme = "catppuccin-mocha";
-            colorscheme = "kanagawa";
+            colorscheme = "catppuccin-mocha";
             theBestCat = "says meow!!";
             theWorstCat = {
               thing'1 = [ "MEOW" "HISSS" ];
