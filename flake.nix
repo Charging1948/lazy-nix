@@ -355,7 +355,7 @@
             # you could also pass something else:
             themer = true;
             # colorscheme = "catppuccin-mocha";
-            colorscheme = "catppuccin-mocha";
+            colorscheme = "catppuccin";
             theBestCat = "says meow!!";
             theWorstCat = {
               thing'1 = [ "MEOW" "HISSS" ];

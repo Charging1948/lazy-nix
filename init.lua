@@ -119,9 +119,6 @@ if require("nixCatsUtils").isNixCats then
   -- it wasn't detecting these because the names are slightly different.
   -- when that happens, add them to the list, then also specify name in the lazySpec
   pluginList[ [[Comment.nvim]] ] = ""
-  pluginList[ [[indent-blankline.nvim]] ] = ""
-  pluginList[ [[gx.nvim]] ] = ""
-  pluginList[ [[catppuccin]] ] = ""
   pluginList[ [[LuaSnip]] ] = ""
   nixLazyPath = allPlugins.start[ [[lazy.nvim]] ]
 end

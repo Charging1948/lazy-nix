@@ -49,6 +49,13 @@ return {
     },
     config = function()
       local t = require("telescope")
+      t.setup({
+        pickers = {
+          colorscheme = {
+            enable_preview = true,
+          },
+        },
+      })
       t.load_extension("cheat")
       t.load_extension("zoxide")
       t.load_extension("undo")
