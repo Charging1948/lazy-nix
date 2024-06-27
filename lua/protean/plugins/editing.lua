@@ -67,6 +67,7 @@ return {
             javascript = "js",
             julia = "jl",
             latex = "tex",
+            lua = "lua",
             markdown = "md",
             nix = "nix",
             python = "py",

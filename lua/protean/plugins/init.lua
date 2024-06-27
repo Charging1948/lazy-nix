@@ -179,23 +179,6 @@ return {
     },
   },
 
-  -- {
-  --   -- Theme inspired by Atom (disabled)
-  --   "navarasu/onedark.nvim",
-  --   priority = 1000,
-  --   config = function()
-  --     vim.cmd.colorscheme("onedark")
-  --   end,
-  -- },
-  -- {
-  --   "catppuccin/nvim",
-  --   name = "catppuccin",
-  --   config = function()
-  --     vim.cmd.colorscheme("catppuccin")
-  --   end,
-  --   priority = 1000,
-  -- },
-
   {
     -- Add indentation guides even on blank lines
     "lukas-reineke/indent-blankline.nvim",
