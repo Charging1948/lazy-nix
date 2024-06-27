@@ -5,7 +5,7 @@ local M = {
       columns = {
         "icon",
         "permissions",
-        "size",
+        -- "size",
         -- "mtime",
       },
       keymaps = {
@@ -28,7 +28,7 @@ local M = {
       },
     },
     keys = {
-      { "-",         "<cmd>Oil<cr>",   desc = "Open Parent directory",    noremap = true },
+      { "-", "<cmd>Oil<cr>", desc = "Open Parent directory", noremap = true },
       { "<leader>-", "<cmd>Oil .<cr>", desc = "Open nvim root directory", noremap = true },
     },
 
