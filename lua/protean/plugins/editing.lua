@@ -101,10 +101,11 @@ return {
     end,
     dependencies = { "nvim-lua/plenary.nvim" },
     submodules = false, -- not needed, submodules are required only for tests
+    config = true,
     opts = {
       handler_options = {
         -- you can select between google, bing, duckduckgo, and ecosia
-        search_engine = "duckduckgo",
+        search_engine = "https://www.startpage.com/do/dsearch?q=",
       },
     },
   },
