@@ -52,6 +52,20 @@ return {
     },
   },
 
+  {
+    "SmithesP/nvim-navbuddy",
+    keys = {
+      {
+        "<leader>os",
+        mode = { "n" },
+        desc = "[O]pen File [S]tructure",
+        function()
+          require("nvim-navbuddy").open()
+        end,
+      },
+    },
+  },
+
   -- {
   --   "folke/flash.nvim",
   --   enabled = false,
