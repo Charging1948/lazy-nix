@@ -65,6 +65,18 @@ return {
       },
     },
   },
+  {
+    "SmithesP/nvim-navic",
+    opts = {
+      click = true,
+      lsp = {
+        auto_attach = true,
+      },
+    },
+    dependencies = {
+      "neovim/nvim-lspconfig",
+    },
+  },
 
   -- {
   --   "folke/flash.nvim",
