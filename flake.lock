@@ -254,7 +254,7 @@
         "type": "github"
       }
     },
-    "plugins-gx": {
+    "plugins-gx-nvim": {
       "flake": false,
       "locked": {
         "lastModified": 1715192744,
@@ -286,7 +286,7 @@
         "type": "github"
       }
     },
-    "plugins-img-clip": {
+    "plugins-img-clip-nvim": {
       "flake": false,
       "locked": {
         "lastModified": 1717612998,
@@ -340,9 +340,9 @@
         "neovim-nightly-overlay": "neovim-nightly-overlay",
         "nix-cats": "nix-cats",
         "nixpkgs": "nixpkgs_2",
-        "plugins-gx": "plugins-gx",
+        "plugins-gx-nvim": "plugins-gx-nvim",
         "plugins-hlargs": "plugins-hlargs",
-        "plugins-img-clip": "plugins-img-clip",
+        "plugins-img-clip-nvim": "plugins-img-clip-nvim",
         "plugins-luarocks-nvim": "plugins-luarocks-nvim",
         "plugins-nvim-nio": "plugins-nvim-nio"
       }
