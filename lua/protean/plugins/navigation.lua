@@ -72,6 +72,10 @@ return {
       highlight = true,
       lsp = {
         auto_attach = true,
+        preference = {
+          "nil_ls",
+          "nixd",
+        },
       },
     },
     dependencies = {
