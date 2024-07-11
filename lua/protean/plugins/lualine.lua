@@ -1,3 +1,36 @@
+-- local colors = require("lualine.themes.auto")
+local colors = require("misc.colors").colors
+
+-- Color table for highlights
+-- stylua: ignore
+
+local mode_color = function()
+  -- auto change color according to neovims mode
+  local mode_color = {
+    n = colors.red,
+    i = colors.green,
+    v = colors.blue,
+    [""] = colors.blue,
+    V = colors.blue,
+    c = colors.magenta,
+    no = colors.red,
+    s = colors.orange,
+    S = colors.orange,
+    [""] = colors.orange,
+    ic = colors.yellow,
+    R = colors.violet,
+    Rv = colors.violet,
+    cv = colors.red,
+    ce = colors.red,
+    r = colors.cyan,
+    rm = colors.cyan,
+    ["r?"] = colors.cyan,
+    ["!"] = colors.red,
+    t = colors.red,
+  }
+  return { fg = mode_color[vim.fn.mode()] }
+end
+
 local conditions = {
   buffer_not_empty = function()
     return vim.fn.empty(vim.fn.expand("%:t")) ~= 1
@@ -43,10 +76,6 @@ local config = {
       {
         "navic",
         color_correction = "dynamic",
-        -- -- INFO: Just use always, to prevent annoying code window shifting
-        -- cond = function()
-        --   return require("nvim-navic").is_available()
-        -- end,
       },
     },
   },
@@ -74,6 +103,7 @@ ins_left({
   function()
     return "▊"
   end,
+  color = mode_color,
   padding = { left = 0, right = 1 }, -- We don't need space before this
 })
 
@@ -82,56 +112,27 @@ ins_left({
   function()
     return ""
   end,
+  color = mode_color,
   -- color = function()
-  --   -- auto change color according to neovims mode
-  --   local mode_color = {
-  --     n = colors.red,
-  --     i = colors.green,
-  --     v = colors.blue,
-  --     [""] = colors.blue,
-  --     V = colors.blue,
-  --     c = colors.magenta,
-  --     no = colors.red,
-  --     s = colors.orange,
-  --     S = colors.orange,
-  --     [""] = colors.orange,
-  --     ic = colors.yellow,
-  --     R = colors.violet,
-  --     Rv = colors.violet,
-  --     cv = colors.red,
-  --     ce = colors.red,
-  --     r = colors.cyan,
-  --     rm = colors.cyan,
-  --     ["r?"] = colors.cyan,
-  --     ["!"] = colors.red,
-  --     t = colors.red,
-  --   }
-  --   return { fg = mode_color[vim.fn.mode()] }
   -- end,
   padding = { right = 1 },
 })
 
 ins_left({
-  -- filesize component
-  "filesize",
-  cond = conditions.buffer_not_empty,
-})
-
-ins_left({
   "filename",
   cond = conditions.buffer_not_empty,
-})
-
-ins_left({ "location" })
-
-ins_left({
-  "progress",
+  color = { fg = colors.magenta, gui = "bold" },
 })
 
 ins_left({
   "diagnostics",
   sources = { "nvim_diagnostic" },
   symbols = { error = " ", warn = " ", info = " " },
+  diagnostics_color = {
+    error = { fg = colors.red },
+    warn = { fg = colors.yellow },
+    info = { fg = colors.cyan },
+  },
 })
 
 -- Insert mid section. You can make any number of sections in neovim :)
@@ -160,51 +161,26 @@ ins_left({
     return msg
   end,
   icon = " LSP:",
-  color = {
-    -- fg = "#ffffff",
-    gui = "bold",
-  },
+  color = { fg = colors.fg, gui = "bold" },
 })
 
 -- Add components to right sections
--- ins_right({
---   "o:encoding", -- option component same as &encoding in viml
---   fmt = string.upper, -- I'm not sure why it's upper case either ;)
---   cond = conditions.hide_in_width,
---   color = {
---     -- fg = colors.green,
---     gui = "bold",
---   },
--- })
-
-ins_right({
-  "fileformat",
-  fmt = string.upper,
-  icons_enabled = true, -- I think icons are cool but Eviline doesn't have them. sigh
-  color = {
-    -- fg = colors.green,
-    gui = "bold",
-  },
-})
 
 ins_right({
   "branch",
   icon = "",
-  color = {
-    -- fg = colors.violet,
-    gui = "bold",
-  },
+  color = { fg = colors.violet, gui = "bold" },
 })
 
 ins_right({
   "diff",
   -- Is it me or the symbol for modified us really weird
   symbols = { added = " ", modified = "󰝤 ", removed = " " },
-  -- diff_color = {
-  --   added = { fg = colors.green },
-  --   modified = { fg = colors.orange },
-  --   removed = { fg = colors.red },
-  -- },
+  diff_color = {
+    added = { fg = colors.green },
+    modified = { fg = colors.orange },
+    removed = { fg = colors.red },
+  },
   cond = conditions.hide_in_width,
 })
 
@@ -212,6 +188,7 @@ ins_right({
   function()
     return "▊"
   end,
+  color = mode_color,
   -- color = { fg = colors.blue },
   padding = { left = 1 },
 })

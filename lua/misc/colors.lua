@@ -3,7 +3,7 @@ local colorschemeName = nixCats("colorscheme")
 local M = {}
 
 if colorschemeName:match("^catppuccin") ~= nil then
-  local palette = require("catppuccin.palettes").get_palette(colorschemeName:gsub("catppuccin%-", ""))
+  local palette = require("catppuccin.palettes").get_palette()
   M.colors = {
     bg = palette.base,
     fg = palette.text,

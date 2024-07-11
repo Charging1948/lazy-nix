@@ -69,6 +69,7 @@ return {
     "SmithesP/nvim-navic",
     opts = {
       click = true,
+      highlight = true,
       lsp = {
         auto_attach = true,
       },
