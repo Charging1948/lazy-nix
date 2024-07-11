@@ -44,6 +44,10 @@
       url = "github:vhyrro/luarocks.nvim";
       flake = false;
     };
+    plugins-comment-highlights-nvim = {
+      url = "github:leon-richardt/comment-highlights.nvim";
+      flake = false;
+    };
     neovim-nightly-overlay = {
       url = "github:nix-community/neovim-nightly-overlay";
     };
@@ -240,6 +244,9 @@
 
             nvim-colorizer-lua
             nvim-remote-containers
+
+            todo-comments-nvim
+            pkgs.neovimPlugins.comment-highlights-nvim
           ];
           telescopePlugins = with pkgs.vimPlugins; [
             telescope-nvim

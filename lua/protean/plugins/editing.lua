@@ -3,6 +3,12 @@ return {
   -- disables hungry features for files larget than 2MB
   { "LunarVim/bigfile.nvim" },
 
+  {
+    "folke/todo-comments.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    opts = {},
+  },
+
   -- add/delete/change can be done with the keymaps
   -- ys{motion}{char}, ds{char}, and cs{target}{replacement}
   {
@@ -24,6 +30,22 @@ return {
 
   { -- format things as tables
     "godlygeek/tabular",
+  },
+
+  {
+    "leon-richardt/comment-highlights.nvim",
+    dependencies = { "nvim-treesitter/nvim-treesitter" },
+    opts = {},
+    cmd = "CHToggle",
+    keys = {
+      {
+        "<leader>tc",
+        function()
+          require("comment-highlights").toggle()
+        end,
+        desc = "[T]oggle [C]omment highlighting",
+      },
+    },
   },
 
   { -- Autoformat
