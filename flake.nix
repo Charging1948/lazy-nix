@@ -239,11 +239,10 @@
             nvim-navic
             nvim-navbuddy
 
-            # TODO: Add stuff for completion.lua inside plugins
-            # TODO: Also use plugins in lua config, especially telescope ones
-
             nvim-colorizer-lua
             nvim-remote-containers
+
+            cloak-nvim
 
             todo-comments-nvim
             pkgs.neovimPlugins.comment-highlights-nvim
