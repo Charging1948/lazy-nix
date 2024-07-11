@@ -47,7 +47,21 @@ return {
           gitsigns = true,
           nvimtree = true,
           treesitter = true,
+          lsp_saga = true,
+          neotree = true,
+          neotest = true,
+          harpoon = true,
+          hop = true,
           notify = false,
+          navic = {
+            enabled = true,
+          },
+          telescope = {
+            enabled = true,
+            style = "nvchad",
+          },
+          lsp_trouble = true,
+          which_key = true,
           -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
         },
       })
