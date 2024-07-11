@@ -7,13 +7,40 @@ return {
     dev = false,
     opts = {
       lspFeatures = {
+        enabled = true,
         languages = { "r", "python", "julia", "bash", "lua", "html", "dot", "javascript", "typescript", "ojs" },
+      },
+      diagnostics = {
+        enabled = true,
+        triggers = { "BufWritePost" },
+      },
+      completion = {
+        enabled = true,
       },
       codeRunner = {
         enabled = true,
         default_method = "slime",
       },
     },
+    config = function(_, opts)
+      require("quarto").setup(opts)
+
+      vim.keymap.set("n", "<leader>qp", ":QuartoPreview<cr>", { desc = "[Q]uarto [P]review", silent = true })
+      vim.keymap.set("n", "<leader>qa", ":QuartoActivate<cr>", { desc = "[Q]uarto [A]ctivate", silent = true })
+      vim.keymap.set("n", "<leader>qh", ":QuartoHover<cr>", { desc = "[Q]uarto [H]over", silent = true })
+      vim.keymap.set("n", "<leader>qd", ":QuartoDiagnostics<cr>", { desc = "[Q]uarto [D]iagnostics", silent = true })
+      vim.keymap.set("n", "<leader>qc", ":QuartoClosePreview<cr>", { desc = "[Q]uarto [C]lose Preview", silent = true })
+
+      local runner = require("quarto.runner")
+      vim.keymap.set("n", "<localleader>qrc", runner.run_cell, { desc = "run cell", silent = true })
+      vim.keymap.set("n", "<localleader>qra", runner.run_above, { desc = "run cell and above", silent = true })
+      vim.keymap.set("n", "<localleader>qrA", runner.run_all, { desc = "run all cells", silent = true })
+      vim.keymap.set("n", "<localleader>qrl", runner.run_line, { desc = "run line", silent = true })
+      vim.keymap.set("v", "<localleader>qr", runner.run_range, { desc = "run visual range", silent = true })
+      vim.keymap.set("n", "<localleader>qRA", function()
+        runner.run_all(true)
+      end, { desc = "run all cells of all languages", silent = true })
+    end,
     dependencies = {
       -- for language features in code cells
       -- configured in lua/plugins/lsp.lua and
@@ -92,7 +119,6 @@ return {
 
   { -- paste an image from the clipboard or drag-and-drop
     "HakonHarnes/img-clip.nvim",
-    event = "BufEnter",
     ft = { "markdown", "quarto", "latex" },
     opts = {
       default = {
@@ -116,7 +142,7 @@ return {
       },
     },
     config = function(_, opts)
-      -- require("img-clip").setup(opts)
+      require("img-clip").setup(opts)
       vim.keymap.set("n", "<leader>ii", ":PasteImage<cr>", { desc = "insert [i]mage from clipboard" })
     end,
   },
