@@ -48,6 +48,18 @@
       url = "github:leon-richardt/comment-highlights.nvim";
       flake = false;
     };
+    plugins-none-ls-extras-nvim = {
+      url = "github:nvimtools/none-ls-extras.nvim";
+      flake = false;
+    };
+    plugins-refactoring-nvim = {
+      url = "github:ThePrimeagen/refactoring.nvim";
+      flake = false;
+    };
+    plugins-ts-node-action = {
+      url = "github:CKolkey/ts-node-action";
+      flake = false;
+    };
     neovim-nightly-overlay = {
       url = "github:nix-community/neovim-nightly-overlay";
     };
@@ -141,32 +153,66 @@
           nil
           nixd
           alejandra
+          deadnix
+          statix
+          manix
+
+          shellharden
+          shfmt
+
+          actionlint
+
+          dotenv-linter
+
+          editorconfig-checker
 
           lua-language-server
           stylua
+          selene
+
+          gleam
 
           gopls
           golint
           golines
           gofumpt
           goimports-reviser
+          gomodifytags
+          impl
+          golangci-lint
 
+          rust-analyzer
+          rustfmt
+
+          html-tidy
+          prettierd
           vscode-langservers-extracted # HTML/CSS/JSON/ESLint
           nodePackages.typescript-language-server
           nodePackages.svelte-language-server
           nodePackages.vls # Vue
 
           pyright
+          pylint
           isort
           black
+          mypy
+
+          vale
+
+          eslint_d
 
           typstfmt
           typst-lsp
 
           mdformat
+          markdownlint-cli2
           marksman
+          languagetool-rust
 
           bibtex-tidy
+          bibclean
+
+          dart
 
           zoxide
         ];
@@ -229,9 +275,13 @@
             vim-repeat
             indent-blankline-nvim
             none-ls-nvim
+            pkgs.neovimPlugins.none-ls-extras-nvim
+            pkgs.neovimPlugins.refactoring-nvim
             lsp-format-nvim
             vim-tmux-navigator
             zen-mode-nvim
+
+            pkgs.neovimPlugins.ts-node-action
 
             pkgs.neovimPlugins.gx-nvim
             pkgs.neovimPlugins.img-clip-nvim
@@ -363,6 +413,7 @@
           general = true;
           scientific = true;
           notes = true;
+          none-ls = true;
           # this does not have an associated category of plugins,
           # but lua can still check for it
           lspDebugMode = false;

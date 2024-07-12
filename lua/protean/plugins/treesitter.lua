@@ -9,4 +9,9 @@ return {
     },
     build = require("nixCatsUtils.lazyCat").lazyAdd(":TSUpdate"),
   },
+  {
+    "ckolkey/ts-node-action",
+    dependencies = { "nvim-treesitter" },
+    opts = {},
+  },
 }
