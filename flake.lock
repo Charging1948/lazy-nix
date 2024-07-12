@@ -334,6 +334,22 @@
         "type": "github"
       }
     },
+    "plugins-none-ls-extras-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1720014115,
+        "narHash": "sha256-BW8VMHryXd8PlspIEPtl207+CkQ8bnE3kc/kmQWsmZY=",
+        "owner": "nvimtools",
+        "repo": "none-ls-extras.nvim",
+        "rev": "ac3b973aa3fabddcb59a493570c63f913ebdb821",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nvimtools",
+        "repo": "none-ls-extras.nvim",
+        "type": "github"
+      }
+    },
     "plugins-nvim-nio": {
       "flake": false,
       "locked": {
@@ -350,6 +366,38 @@
         "type": "github"
       }
     },
+    "plugins-refactoring-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1720185514,
+        "narHash": "sha256-05F0LA04hEGbQyEsLIZI3oLw1ZVyPzR19bF9FpD1k5E=",
+        "owner": "ThePrimeagen",
+        "repo": "refactoring.nvim",
+        "rev": "d07218748c48e756c27aa6859bfa6e62a3d271af",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ThePrimeagen",
+        "repo": "refactoring.nvim",
+        "type": "github"
+      }
+    },
+    "plugins-ts-node-action": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1714469098,
+        "narHash": "sha256-kOXH3r+V+DAxoATSnZepEAekrkO1TezKSkONuQ3Kzu4=",
+        "owner": "CKolkey",
+        "repo": "ts-node-action",
+        "rev": "6d3b60754fd87963d70eadaa2f77873b447eac26",
+        "type": "github"
+      },
+      "original": {
+        "owner": "CKolkey",
+        "repo": "ts-node-action",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "flake-utils": "flake-utils",
@@ -361,7 +409,10 @@
         "plugins-hlargs": "plugins-hlargs",
         "plugins-img-clip-nvim": "plugins-img-clip-nvim",
         "plugins-luarocks-nvim": "plugins-luarocks-nvim",
-        "plugins-nvim-nio": "plugins-nvim-nio"
+        "plugins-none-ls-extras-nvim": "plugins-none-ls-extras-nvim",
+        "plugins-nvim-nio": "plugins-nvim-nio",
+        "plugins-refactoring-nvim": "plugins-refactoring-nvim",
+        "plugins-ts-node-action": "plugins-ts-node-action"
       }
     },
     "systems": {

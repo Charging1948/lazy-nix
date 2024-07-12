@@ -50,7 +50,7 @@ return {
 
   { -- Autoformat
     "stevearc/conform.nvim",
-    enabled = true,
+    enabled = false,
     event = "BufEnter",
     config = function()
       require("conform").setup({
@@ -109,6 +109,20 @@ return {
           lang_to_formatters = {},
         },
       }
+    end,
+  },
+
+  {
+    "mfussenegger/nvim-lint",
+    enabled = false,
+    config = function()
+      vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+        callback = function()
+          -- INFO: try_lint without arguments runs the linters defined in `linters_by_ft`
+          -- for the current filetype
+          require("lint").try_lint()
+        end,
+      })
     end,
   },
 

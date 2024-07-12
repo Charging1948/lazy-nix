@@ -1,11 +1,8 @@
 local null_ls = require("null-ls")
-local none_ls = require("none-ls")
 local bf = null_ls.builtins.formatting
 local bc = null_ls.builtins.completion
+local bca = null_ls.builtins.code_actions
 local bd = null_ls.builtins.diagnostics
-local nd = none_ls.diagnostics
-local nc = none_ls.code_actions
-local nf = none_ls.formatting
 
 null_ls.setup({
   sources = {
@@ -17,7 +14,7 @@ null_ls.setup({
     bf.prettierd,
     bf.prisma_format,
     bf.bibclean,
-    bf.dart,
+    bf.dart_format,
     bf.gofumpt,
     bf.goimports_reviser,
     bf.golines,
@@ -29,11 +26,12 @@ null_ls.setup({
     bf.typstfmt,
 
     bc.luasnip,
-    bc.gomodifytags,
-    bc.refactoring,
-    bc.statix,
-    bc.impl,
-    bc.ts_node_action,
+
+    bca.gomodifytags,
+    bca.refactoring,
+    bca.statix,
+    bca.impl,
+    bca.ts_node_action,
 
     bd.actionlint,
     bd.deadnix,
@@ -46,10 +44,8 @@ null_ls.setup({
     bd.vale,
     bd.selene,
 
-    nd.eslint_d,
-
-    nc.eslint_d,
-
-    nf.eslint_d,
+    require("none-ls.diagnostics.eslint_d"),
+    require("none-ls.code_actions.eslint_d"),
+    require("none-ls.formatting.eslint_d"),
   },
 })
