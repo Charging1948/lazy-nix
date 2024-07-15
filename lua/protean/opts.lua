@@ -36,7 +36,7 @@ vim.o.updatetime = 250
 vim.o.timeoutlen = 300
 
 -- Set completeopt to have a better completion experience
-vim.o.completeopt = "menuone,noselect"
+vim.o.completeopt = "menu,menuone,noinsert"
 
 -- NOTE: You should make sure your terminal supports this
 vim.o.termguicolors = true
@@ -60,4 +60,4 @@ vim.opt.cursorline = true
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
 -- Same as above, but horizontally.
-vim.opt.sidescrolloff = 5
+vim.opt.sidescrolloff = 8

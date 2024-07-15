@@ -7,6 +7,5 @@ vim.schedule(function()
 end)
 
 require("protean.keybinds")
-require("protean.cmp")
 require("protean.opts")
 require("protean.autocmd")
