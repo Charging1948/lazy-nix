@@ -78,6 +78,14 @@ local config = {
         color_correction = "dynamic",
       },
     },
+    lualine_x = {
+      {
+        function ()
+          local time = os.date("*t")
+          return ("%02d:%02d:%02d"):format(time.hour, time.min, time.sec)
+        end
+      }
+    }
   },
   opts = {
     options = {
