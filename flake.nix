@@ -243,6 +243,7 @@
             lazydev-nvim
             pkgs.neovimPlugins.luvit-meta
             neoconf-nvim
+            dressing-nvim
             nvim-cmp
             friendly-snippets
             luasnip
@@ -300,6 +301,8 @@
             nvim-remote-containers
 
             cloak-nvim
+
+            flutter-tools-nvim
 
             todo-comments-nvim
             pkgs.neovimPlugins.comment-highlights-nvim
