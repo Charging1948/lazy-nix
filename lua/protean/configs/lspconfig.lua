@@ -1,4 +1,7 @@
 local lspconfig = require("lspconfig")
+
+-- require("neoconf").setup()
+
 local servers = {
   "tsserver",
 }

@@ -120,6 +120,7 @@ return {
           }),
         },
         sources = {
+          { name = "lazydev", group_index = 0,},
           { name = "otter" }, -- for code chunks in quarto
           { name = "path" },
           { name = "nvim-lsp" },

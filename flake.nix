@@ -60,6 +60,10 @@
       url = "github:CKolkey/ts-node-action";
       flake = false;
     };
+    plugins-luvit-meta = {
+      url = "github:Bilal2453/luvit-meta";
+      flake = false;
+    };
     neovim-nightly-overlay = {
       url = "github:nix-community/neovim-nightly-overlay";
     };
@@ -166,6 +170,8 @@
 
           editorconfig-checker
 
+          efm-langserver
+
           lua-language-server
           stylua
           selene
@@ -234,7 +240,8 @@
         general = {
           gitPlugins = with pkgs.neovimPlugins; [hlargs];
           vimPlugins = with pkgs.vimPlugins; [
-            neodev-nvim
+            lazydev-nvim
+            pkgs.neovimPlugins.luvit-meta
             neoconf-nvim
             nvim-cmp
             friendly-snippets
