@@ -18,9 +18,6 @@ return {
   {
     -- LSP Configuration & Plugins
     "neovim/nvim-lspconfig",
-    config = function()
-      require("protean.configs.lspconfig")
-    end,
     dependencies = {
       -- Automatically install LSPs to stdpath for neovim
       --[[ ----------------------------------------- ]]

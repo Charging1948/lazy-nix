@@ -6,6 +6,7 @@ vim.schedule(function()
   vim.cmd.colorscheme(colorschemeName)
 end)
 
+require("protean.lsp")
 require("protean.keybinds")
 require("protean.opts")
 require("protean.autocmd")
