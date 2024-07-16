@@ -202,7 +202,6 @@ return {
   {
     "numToStr/Comment.nvim",
     opts = {},
-    name = "comment.nvim",
   },
 
   {
