@@ -161,6 +161,8 @@
           statix
           manix
 
+          pandoc
+
           shellharden
           shfmt
 
@@ -259,6 +261,7 @@
             cmp-latex-symbols
             cmp-pandoc-references
             copilot-lua
+            copilot-cmp
             nvim-autopairs
             lspkind-nvim
             plenary-nvim

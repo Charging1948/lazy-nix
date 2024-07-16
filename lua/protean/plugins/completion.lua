@@ -105,6 +105,7 @@ return {
             mode = "symbol",
             menu = {
               otter = "[🦦]",
+              copilot = "",
               nvim_lsp = "[LSP]",
               luasnip = "[snip]",
               buffer = "[buf]",
@@ -120,16 +121,17 @@ return {
           }),
         },
         sources = {
-          { name = "lazydev", group_index = 0,},
+          { name = "lazydev",                group_index = 0 },
           { name = "otter" }, -- for code chunks in quarto
+          { name = "copilot" },
+          { name = "pandoc_references" },
           { name = "path" },
           { name = "nvim-lsp" },
           { name = "nvim_lsp_signature_help" },
-          { name = "luasnip", keyword_length = 3, max_item_count = 3 },
-          { name = "pandoc_references" },
-          { name = "buffer", keyword_length = 7, max_item_count = 3 },
+          { name = "luasnip",                keyword_length = 3, max_item_count = 3 },
+          { name = "buffer",                 keyword_length = 7, max_item_count = 3 },
           { name = "spell" },
-          { name = "treesitter", keyword_length = 7, max_item_count = 3 },
+          { name = "treesitter",             keyword_length = 7, max_item_count = 3 },
           { name = "calc" },
           { name = "latex_symbols" },
           { name = "emoji" },
@@ -156,12 +158,11 @@ return {
 
   { -- gh copilot
     "zbirenbaum/copilot.lua",
-    enabled = false,
+    enabled = true,
     config = function()
       require("copilot").setup({
         suggestion = {
-          enabled = true,
-          auto_trigger = true,
+          enabled = false,
           debounce = 75,
           keymap = {
             accept = "<c-a>",
@@ -175,5 +176,9 @@ return {
         panel = { enabled = false },
       })
     end,
+  },
+  {
+    "zbirenbaum/copilot-cmp",
+    config = true,
   },
 }
