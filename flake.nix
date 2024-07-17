@@ -187,7 +187,6 @@
           goimports-reviser
           gomodifytags
           impl
-          golangci-lint
 
           rust-analyzer
           rustfmt
@@ -198,6 +197,9 @@
           nodePackages.typescript-language-server
           nodePackages.svelte-language-server
           nodePackages.vls # Vue
+          typescript
+
+          ltex-ls
 
           pyright
           pylint
