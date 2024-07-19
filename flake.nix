@@ -64,6 +64,10 @@
       url = "github:Bilal2453/luvit-meta";
       flake = false;
     };
+    plugins-ltex-utils = {
+      url = "github:jhofscheier/ltex-utils.nvim";
+      flake = false;
+    };
     neovim-nightly-overlay = {
       url = "github:nix-community/neovim-nightly-overlay";
     };
@@ -328,6 +332,7 @@
           otter-nvim
           molten-nvim
           vim-slime
+          pkgs.neovimPlugins.plugins-ltex-utils
         ];
         notes = with pkgs.vimPlugins; [
           pkgs.neovimPlugins.luarocks-nvim
