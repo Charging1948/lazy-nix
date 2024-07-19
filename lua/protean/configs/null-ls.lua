@@ -1,24 +1,27 @@
+local null_ls = require("null-ls")
+
 local augroup = vim.api.nvim_create_augroup("NoneLsFormatting", {})
 
 local on_attach = function(client, bufnr)
   if client.supports_method("textDocument/formatting") then
-  vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
-  vim.api.nvim_create_autocmd("BufWritePre", {
-    group = augroup,
-    buffer = bufnr,
-    callback = function()
-      vim.lsp.buf.format({ bufnr = bufnr })
-    end,
+    vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+    vim.api.nvim_create_autocmd("BufWritePre", {
+      group = augroup,
+      buffer = bufnr,
+      callback = function()
+        if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
+          return
+        end
+        vim.lsp.buf.format({ bufnr = bufnr })
+      end,
     })
   end
 end
 
-local null_ls = require("null-ls")
 local bf = null_ls.builtins.formatting
 local bc = null_ls.builtins.completion
 local bca = null_ls.builtins.code_actions
 local bd = null_ls.builtins.diagnostics
-
 
 null_ls.setup({
   sources = {

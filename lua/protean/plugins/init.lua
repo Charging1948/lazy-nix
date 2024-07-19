@@ -46,19 +46,6 @@ return {
         opts = {},
       },
 
-      -- Additional lua configuration, makes nvim stuff amazing!
-      {
-        "folke/lazydev.nvim",
-        ft = "lua", -- only load on lua files
-        opts = {
-          library = {
-            -- See the configuration section for more details
-            -- Load luvit types when the `vim.uv` word is found
-            { path = "luvit-meta/library", words = { "vim%.uv" } },
-          },
-        },
-      },
-      { "Bilal2453/luvit-meta", lazy = true },
       {
         "folke/neoconf.nvim",
         config = true,
@@ -73,6 +60,22 @@ return {
       },
     },
   },
+
+  -- Additional lua configuration, makes nvim stuff amazing!
+  {
+    "folke/lazydev.nvim",
+    ft = "lua", -- only load on lua files
+    opts = {
+      enabled = true,
+      library = {
+        -- See the configuration section for more details
+        "lazy.nvim",
+        -- Load luvit types when the `vim.uv` word is found
+        { path = "luvit-meta/library", words = { "vim%.uv" } },
+      },
+    },
+  },
+  { "Bilal2453/luvit-meta", lazy = true },
 
   {
     -- Autocompletion
