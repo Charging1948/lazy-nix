@@ -310,6 +310,7 @@
             nvim-remote-containers
 
             cloak-nvim
+            neocord
 
             flutter-tools-nvim
 
