@@ -20,13 +20,16 @@ end
 local servers = {
   -- clangd = {},
   gopls = {},
-  marksman = {},
+  marksman = {
+    filetypes = { "markdown", "markdown.mdx", "quarto" },
+  },
   pyright = {},
   rust_analyzer = {},
   tsserver = {},
   html = { filetypes = { "html", "twig", "hbs" } },
   nixd = {},
   nil_ls = {},
+  ltex = {},
 
   lua_ls = {
     Lua = {
@@ -38,10 +41,21 @@ local servers = {
         globals = { "nixCats" },
       },
     },
-    workspace = { checkThirdParty = true },
+    workspace = {
+      checkThirdParty = true,
+      library = {
+        vim.env.VIMRUNTIME,
+      },
+    },
     telemetry = { enabled = false },
     filetypes = { "lua" },
   },
+}
+
+local on_attachs = {
+  ltex = function(client, bufnr)
+    require("ltex-utils").on_attach(bufnr)
+  end,
 }
 
 -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
@@ -56,7 +70,7 @@ if require("nixCatsUtils").isNixCats then
   for server_name, _ in pairs(servers) do
     require("lspconfig")[server_name].setup({
       capabilities = capabilities,
-      on_attach = on_attach,
+      on_attach = on_attachs[server_name] or nil,
       settings = servers[server_name],
       filetypes = (servers[server_name] or {}).filetypes,
       cmd = (servers[server_name] or {}).cmd,
@@ -75,7 +89,7 @@ else
     function(server_name)
       require("lspconfig")[server_name].setup({
         capabilities = capabilities,
-        on_attach = on_attach,
+        on_attach = on_attachs[server_name] or nil,
         settings = servers[server_name],
         filetypes = (servers[server_name] or {}).filetypes,
       })
