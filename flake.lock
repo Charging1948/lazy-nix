@@ -92,6 +92,24 @@
         "type": "github"
       }
     },
+    "flake-utils_2": {
+      "inputs": {
+        "systems": "systems_2"
+      },
+      "locked": {
+        "lastModified": 1701680307,
+        "narHash": "sha256-kAuep2h5ajznlPMD9rnQyffWG8EM/C73lejGofXvdM8=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "4022d587cbbfd70fe950c1e2083a02621806a725",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
     "git-hooks": {
       "inputs": {
         "flake-compat": "flake-compat_2",
@@ -160,6 +178,27 @@
       "original": {
         "owner": "hercules-ci",
         "repo": "hercules-ci-effects",
+        "type": "github"
+      }
+    },
+    "napalm": {
+      "inputs": {
+        "flake-utils": "flake-utils_2",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1717929455,
+        "narHash": "sha256-BiI5xWygriOJuNISnGAeL0KYxrEMnjgpg+7wDskVBhI=",
+        "owner": "nix-community",
+        "repo": "napalm",
+        "rev": "e1babff744cd278b56abe8478008b4a9e23036cf",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "napalm",
         "type": "github"
       }
     },
@@ -254,6 +293,22 @@
         "type": "github"
       }
     },
+    "plugins-cmp-pandoc-references": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1688994825,
+        "narHash": "sha256-B3KxmQUrYrBxKn/WRjMNSA0P499MUgGyxTi4S8h5W4E=",
+        "owner": "jmbuhr",
+        "repo": "cmp-pandoc-references",
+        "rev": "dd86d3a8acc52a6d0503c3a45ba1bb93f39a3d31",
+        "type": "github"
+      },
+      "original": {
+        "owner": "jmbuhr",
+        "repo": "cmp-pandoc-references",
+        "type": "github"
+      }
+    },
     "plugins-comment-highlights-nvim": {
       "flake": false,
       "locked": {
@@ -315,6 +370,22 @@
       "original": {
         "owner": "HakonHarnes",
         "repo": "img-clip.nvim",
+        "type": "github"
+      }
+    },
+    "plugins-ltex-utils": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1691877017,
+        "narHash": "sha256-3At3UNTsug0p+eBw9HeedrPRUq8YFBAVrFgQtOCaTqo=",
+        "owner": "jhofscheier",
+        "repo": "ltex-utils.nvim",
+        "rev": "8c6ef83d5ba059725265825f72a329757216991c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "jhofscheier",
+        "repo": "ltex-utils.nvim",
         "type": "github"
       }
     },
@@ -417,13 +488,16 @@
     "root": {
       "inputs": {
         "flake-utils": "flake-utils",
+        "napalm": "napalm",
         "neovim-nightly-overlay": "neovim-nightly-overlay",
         "nix-cats": "nix-cats",
         "nixpkgs": "nixpkgs_2",
+        "plugins-cmp-pandoc-references": "plugins-cmp-pandoc-references",
         "plugins-comment-highlights-nvim": "plugins-comment-highlights-nvim",
         "plugins-gx-nvim": "plugins-gx-nvim",
         "plugins-hlargs": "plugins-hlargs",
         "plugins-img-clip-nvim": "plugins-img-clip-nvim",
+        "plugins-ltex-utils": "plugins-ltex-utils",
         "plugins-luarocks-nvim": "plugins-luarocks-nvim",
         "plugins-luvit-meta": "plugins-luvit-meta",
         "plugins-none-ls-extras-nvim": "plugins-none-ls-extras-nvim",
@@ -433,6 +507,21 @@
       }
     },
     "systems": {
+      "locked": {
+        "lastModified": 1681028828,
+        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
+        "owner": "nix-systems",
+        "repo": "default",
+        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "repo": "default",
+        "type": "github"
+      }
+    },
+    "systems_2": {
       "locked": {
         "lastModified": 1681028828,
         "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",

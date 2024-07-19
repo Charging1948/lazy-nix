@@ -1,0 +1,24 @@
+---
+format: typst
+lang: de
+bibliography: ./bib/test.bib
+---
+
+<https://startpage.de>
+
+# Test
+
+Dies is ein Test.
+
+Bitte beeachten Sie folgendes:
+
+Dies ist ein weiterer Teast.
+
+Kollege
+
+## Test {#sec-test}
+
+[@sec-test; @fig-test]
+
+
+![test](../img/test.gif){#fig-test}

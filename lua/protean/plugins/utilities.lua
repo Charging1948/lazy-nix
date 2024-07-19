@@ -27,8 +27,17 @@ return {
   },
   {
     "jhofscheier/ltex-utils.nvim",
-    dependencies = { "neovim/nvim-lspconfig", "nvim-telescope/telescope.nvim" },
-    opts = {},
+    name = "ltex-utils",
+    dependencies = {
+      "neovim/nvim-lspconfig",
+      "nvim-telescope/telescope.nvim",
+      "nvim-telescope/telescope-fzf-native.nvim",
+    },
+    opts = {
+      dictionary = {
+        path = vim.api.nvim_call_function("stdpath", { "state" }) .. "/ltex/",
+      },
+    },
   },
   {
     "IogaMaster/neocord",

@@ -68,6 +68,11 @@
       url = "github:jhofscheier/ltex-utils.nvim";
       flake = false;
     };
+    plugins-cmp-pandoc-references = {
+      # url = "github:jmbuhr/cmp-pandoc-references";
+      url = "github:Charging1948/cmp-pandoc-references";
+      flake = false;
+    };
     neovim-nightly-overlay = {
       url = "github:nix-community/neovim-nightly-overlay";
     };
@@ -265,7 +270,7 @@
             cmp-spell
             cmp-treesitter
             cmp-latex-symbols
-            cmp-pandoc-references
+            pkgs.neovimPlugins.cmp-pandoc-references
             copilot-lua
             copilot-cmp
             nvim-autopairs
@@ -333,7 +338,7 @@
           otter-nvim
           molten-nvim
           vim-slime
-          pkgs.neovimPlugins.plugins-ltex-utils
+          pkgs.neovimPlugins.ltex-utils
         ];
         notes = with pkgs.vimPlugins; [
           pkgs.neovimPlugins.luarocks-nvim
