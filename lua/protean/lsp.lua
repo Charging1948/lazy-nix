@@ -44,7 +44,7 @@ local on_attach = function(_, bufnr)
 end
 
 -- document existing key chains
-require("which-key").register({
+require("which-key").add({
   { "<leader>c",  group = "[C]ode" },
   { "<leader>c_", hidden = true },
   { "<leader>d",  group = "[D]ocument" },
@@ -64,7 +64,7 @@ require("which-key").register({
 })
 -- register which-key VISUAL mode
 -- required for visual <leader>hs (hunk stage) to work
-require("which-key").register({
+require("which-key").add({
   { "<leader>",  group = "VISUAL <leader>", mode = "v" },
   { "<leader>h", desc = "Git [H]unk",       mode = "v" },
 })
