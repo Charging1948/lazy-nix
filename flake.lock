@@ -296,15 +296,15 @@
     "plugins-cmp-pandoc-references": {
       "flake": false,
       "locked": {
-        "lastModified": 1688994825,
-        "narHash": "sha256-B3KxmQUrYrBxKn/WRjMNSA0P499MUgGyxTi4S8h5W4E=",
-        "owner": "jmbuhr",
+        "lastModified": 1721413078,
+        "narHash": "sha256-faB1ucwFW9ascsmKdV03pLVEJwsXwR2Q4Umvb0yyx00=",
+        "owner": "Charging1948",
         "repo": "cmp-pandoc-references",
-        "rev": "dd86d3a8acc52a6d0503c3a45ba1bb93f39a3d31",
+        "rev": "90d11c5dd61ff52742c29c3a10d20a0c09349442",
         "type": "github"
       },
       "original": {
-        "owner": "jmbuhr",
+        "owner": "Charging1948",
         "repo": "cmp-pandoc-references",
         "type": "github"
       }
