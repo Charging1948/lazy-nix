@@ -1,6 +1,6 @@
 -- [[ Configure LSP ]]
 --  This function gets run when an LSP connects to a particular buffer.
-local on_attach = function(_, bufnr)
+local on_attach = function(client, bufnr)
   -- NOTE: Remember that lua is a real programming language, and as such it is possible
   -- to define small helper and utility functions so you don't have to repeat yourself
   -- many times.
@@ -121,6 +121,11 @@ local servers = {
 }
 
 local on_attachs = {
+  marksman = function(client, bufnr)
+    on_attach(client, bufnr)
+    require("ltex-utils").on_attach(bufnr)
+    require("nvim-navbuddy").attach(client, bufnr)
+  end,
   ltex = function(client, bufnr)
     on_attach(client, bufnr)
     require("ltex-utils").on_attach(bufnr)
