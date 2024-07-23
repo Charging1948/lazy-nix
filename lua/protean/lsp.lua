@@ -65,8 +65,10 @@ require("which-key").add({
 -- register which-key VISUAL mode
 -- required for visual <leader>hs (hunk stage) to work
 require("which-key").add({
-  { "<leader>",  group = "VISUAL <leader>", mode = "v" },
-  { "<leader>h", desc = "Git [H]unk",       mode = "v" },
+  mode = { "v" },
+  { "<leader>",  group = "VISUAL <leader>" },
+
+  { "<leader>h", desc = "Git [H]unk" },
 })
 --[[ ------------------------------------- ]]
 --[[ Handling mason is covered in the help ]]
