@@ -92,7 +92,7 @@ end
 local servers = {
   gopls = {},
   marksman = {
-    filetypes = { "markdown", "markdown.mdx", "quarto" },
+    filetypes = { "markdown", "markdown.mdx", "quarto", "markdown.quarto" },
   },
   pyright = {},
   rust_analyzer = {},
@@ -123,7 +123,6 @@ local servers = {
 local on_attachs = {
   marksman = function(client, bufnr)
     on_attach(client, bufnr)
-    require("ltex-utils").on_attach(bufnr)
     require("nvim-navbuddy").attach(client, bufnr)
   end,
   ltex = function(client, bufnr)
