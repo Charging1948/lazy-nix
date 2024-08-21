@@ -100,7 +100,11 @@ local servers = {
   html = { filetypes = { "html", "twig", "hbs" } },
   nixd = {},
   nil_ls = {},
-  ltex = {},
+  ltex = {
+    ltex = {
+      checkFrequency = "save",
+    },
+  },
 
   lua_ls = {
     Lua = {
